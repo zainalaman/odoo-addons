@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_facility_booking" name="Facility Booking" 
+              sequence="100"/>
+    
+    <!-- Facilities Submenu -->
+    <menuitem id="menu_facility_management" name="Facilities" 
+              parent="menu_facility_booking" action="action_facility" 
+              sequence="10"/>
+    
+    <!-- Bookings Submenu -->
+    <menuitem id="menu_booking_management" name="Bookings" 
+              parent="menu_facility_booking" action="action_booking" 
+              sequence="20"/>
+</odoo>

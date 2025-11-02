@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_asset_management" name="Asset Management" 
+              sequence="10"/>
+    
+    <!-- Asset Submenu -->
+    <menuitem id="menu_asset_management_assets" name="Assets" 
+              parent="menu_asset_management" action="action_asset_management" 
+              sequence="10"/>
+    
+    <menuitem id="menu_asset_management_maintenance" name="Maintenance" 
+              parent="menu_asset_management" action="action_asset_maintenance" 
+              sequence="20"/>
+    
+    <menuitem id="menu_asset_management_depreciation" name="Depreciation" 
+              parent="menu_asset_management" action="action_asset_depreciation" 
+              sequence="30"/>
+</odoo>

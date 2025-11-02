@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Depreciation List View -->
+    <record id="view_depreciation_list" model="ir.ui.view">
+        <field name="name">asset.depreciation.list</field>
+        <field name="model">asset.depreciation</field>
+        <field name="arch" type="xml">
+            <list string="Depreciation">
+                <field name="name"/>
+                <field name="asset_id"/>
+                <field name="date"/>
+                <field name="amount"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Depreciation Form View -->
+    <record id="view_depreciation_form" model="ir.ui.view">
+        <field name="name">asset.depreciation.form</field>
+        <field name="model">asset.depreciation</field>
+        <field name="arch" type="xml">
+            <form string="Depreciation">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="asset_id"/>
+                            <field name="state"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="amount"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Depreciation Search View -->
+    <record id="view_depreciation_search" model="ir.ui.view">
+        <field name="name">asset.depreciation.search</field>
+        <field name="model">asset.depreciation</field>
+        <field name="arch" type="xml">
+            <search string="Search Depreciation">
+                <field name="name"/>
+                <field name="asset_id"/>
+                <filter string="Draft Entries" name="draft_entries" 
+                        domain="[('state','=','draft')]"/>
+                <filter string="Posted Entries" name="posted_entries" 
+                        domain="[('state','=','posted')]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for Depreciation -->
+    <record id="action_asset_depreciation" model="ir.actions.act_window">
+        <field name="name">Depreciation</field>
+        <field name="res_model">asset.depreciation</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Facility List View -->
+    <record id="view_facility_list" model="ir.ui.view">
+        <field name="name">facility.list</field>
+        <field name="model">facility</field>
+        <field name="arch" type="xml">
+            <list string="Facilities">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="facility_type"/>
+                <field name="capacity"/>
+                <field name="location"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Facility Form View -->
+    <record id="view_facility_form" model="ir.ui.view">
+        <field name="name">facility.form</field>
+        <field name="model">facility</field>
+        <field name="arch" type="xml">
+            <form string="Facility">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="facility_type"/>
+                        </group>
+                        <group>
+                            <field name="capacity"/>
+                            <field name="location"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Facility Search View -->
+    <record id="view_facility_search" model="ir.ui.view">
+        <field name="name">facility.search</field>
+        <field name="model">facility</field>
+        <field name="arch" type="xml">
+            <search string="Search Facilities">
+                <field name="name"/>
+                <field name="facility_type"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for Facilities -->
+    <record id="action_facility" model="ir.actions.act_window">
+        <field name="name">Facilities</field>
+        <field name="res_model">facility</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

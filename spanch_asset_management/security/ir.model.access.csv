@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_asset_management,asset_management,model_asset_management,base.group_user,1,1,1,1
+access_asset_maintenance,asset_maintenance,model_asset_maintenance,base.group_user,1,1,1,1
+access_asset_depreciation,asset_depreciation,model_asset_depreciation,base.group_user,1,1,1,1
+access_asset_category,asset_category,model_asset_category,base.group_user,1,1,1,1
+access_asset_location,asset_location,model_asset_location,base.group_user,1,1,1,1
+access_maintenance_part_line,maintenance_part_line,model_maintenance_part_line,base.group_user,1,1,1,1

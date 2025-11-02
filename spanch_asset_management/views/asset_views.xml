@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Asset List View -->
+    <record id="view_asset_list" model="ir.ui.view">
+        <field name="name">asset.management.list</field>
+        <field name="model">asset.management</field>
+        <field name="arch" type="xml">
+            <list string="Assets">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="asset_category_id"/>
+                <field name="purchase_date"/>
+                <field name="purchase_cost"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Asset Form View -->
+    <record id="view_asset_form" model="ir.ui.view">
+        <field name="name">asset.management.form</field>
+        <field name="model">asset.management</field>
+        <field name="arch" type="xml">
+            <form string="Asset">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="asset_category_id"/>
+                        </group>
+                        <group>
+                            <field name="state"/>
+                            <field name="purchase_date"/>
+                            <field name="purchase_cost"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Asset Search View -->
+    <record id="view_asset_search" model="ir.ui.view">
+        <field name="name">asset.management.search</field>
+        <field name="model">asset.management</field>
+        <field name="arch" type="xml">
+            <search string="Search Assets">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="asset_category_id"/>
+                <filter string="Active Assets" name="active_assets" 
+                        domain="[('state','=','active')]"/>
+                <filter string="Draft Assets" name="draft_assets" 
+                        domain="[('state','=','draft')]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for Assets -->
+    <record id="action_asset_management" model="ir.actions.act_window">
+        <field name="name">Assets</field>
+        <field name="res_model">asset.management</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first asset!
+            </p>
+        </field>
+    </record>
+</odoo>
