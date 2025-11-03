@@ -10,6 +10,7 @@ class Facility(models.Model):
         ('meeting_room', 'Meeting Room'),
         ('conference_hall', 'Conference Hall'),
         ('training_room', 'Training Room'),
+        ('discussion room', 'Discussion Room')
         ('other', 'Other')
     ], string='Facility Type', default='meeting_room')
     
